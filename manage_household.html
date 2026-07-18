@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWSMS - Manage Households</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-layout">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-small"></div>
+            <span class="sidebar-brand">CWSMS</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="register_household.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">Register Household</span>
+            </a>
+            <a href="manage_household.html" class="nav-item active">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Manage Households</span>
+            </a>
+            <a href="record_payment.html" class="nav-item">
+                <span class="nav-icon">💳</span>
+                <span class="nav-text">Recent Payment</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📄</span>
+                <span class="nav-text">View Payments</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Audit Reports</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Reports</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notifications</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">💾</span>
+                <span class="nav-text">Backup Data</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Logout</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <div class="logo"></div>
+                <span class="header-title">Community Water Supply Management System</span>
+            </div>
+            <div class="header-right">
+                <span class="header-date">January 25, 2026</span>
+                <button class="icon-button">📍</button>
+                <button class="icon-button notification-btn">
+                    🔔
+                    <span class="notification-badge">4</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h1 class="page-title">Manage Households</h1>
+                <p class="page-subtitle">View and update registered households</p>
+            </div>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <div class="search-wrapper">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search by name or contact..."
+                        >
+                        <button class="btn btn-primary" id="searchBtn">Search</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Phone/Hold Id ▼</th>
+                                <th>Household</th>
+                                <th>2hotelssec</th>
+                                <th>Address</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="householdTableBody">
+                            <tr>
+                                <td>1</td>
+                                <td>HH-101</td>
+                                <td>Kamara Family</td>
+                                <td>SLL 539-5555</td>
+                                <td>23 Main St.</td>
+                                <td>
+                                    <button class="btn-action btn-edit" data-id="HH-101">✏️ Edit</button>
+                                    <button class="btn-action btn-delete" data-id="HH-101">🗑️ Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>HH-102</td>
+                                <td>Sesay Residence</td>
+                                <td>SLL 569-5510</td>
+                                <td>45 Liberty Ave.</td>
+                                <td>
+                                    <button class="btn-action btn-edit" data-id="HH-102">✏️ Edit</button>
+                                    <button class="btn-action btn-delete" data-id="HH-102">🗑️ Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>HH-103</td>
+                                <td>Jallah Household</td>
+                                <td>SLL 712-3334</td>
+                                <td>67 Cole St.</td>
+                                <td>
+                                    <button class="btn-action btn-edit" data-id="HH-103">✏️ Edit</button>
+                                    <button class="btn-action btn-delete" data-id="HH-103">🗑️ Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>HH-104</td>
+                                <td>Conteh Home</td>
+                                <td>SLL 787-2224</td>
+                                <td>89 Heritage Rd.</td>
+                                <td>
+                                    <button class="btn-action btn-edit" data-id="HH-104">✏️ Edit</button>
+                                    <button class="btn-action btn-delete" data-id="HH-104">🗑️ Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>HH-105</td>
+                                <td>Mansaray Villa</td>
+                                <td>SLL 890-5678</td>
+                                <td>101 Pine St.</td>
+                                <td>
+                                    <button class="btn-action btn-edit" data-id="HH-105">✏️ Edit</button>
+                                    <button class="btn-action btn-delete" data-id="HH-105">🗑️ Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <div class="pagination-info">
+                        Page <span id="currentPage">1</span> of <span id="totalPages">5</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                        <button class="btn btn-primary" id="nextBtn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-background"></div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Household</h2>
+                <button class="close-modal" id="closeEditModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editHouseholdForm">
+                    <input type="hidden" id="editHouseholdId">
+                    <div class="form-group">
+                        <label for="editHouseholdName" class="form-label">Household Name</label>
+                        <input type="text" id="editHouseholdName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editContact" class="form-label">Contact Number</label>
+                        <input type="text" id="editContact" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAddress" class="form-label">Address</label>
+                        <input type="text" id="editAddress" class="form-input" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelEditBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
